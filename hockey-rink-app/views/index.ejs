@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><%= title %></h1>
+        <div id="rink" class="rink" onclick="takeShot(event)">
+            <!-- Shots will be loaded dynamically via JavaScript -->
+        </div>
+        
+        <div class="controls">
+            <button onclick="loadShots()">Refresh Shots</button>
+            <button onclick="clearAllShots()" class="clear">Clear All Shots</button>
+        </div>
+    </div>
+
+    <!-- Modal for player number input -->
+    <div id="playerModal" class="modal">
+        <div class="modal-content">
+            <h2>Enter Player Number</h2>
+            <input type="number" id="playerNumber" placeholder="Enter player number (1-99)" min="1" max="99">
+            <br>
+            <button onclick="confirmShot()">Take Shot</button>
+            <button onclick="cancelShot()" class="cancel">Cancel</button>
+        </div>
+    </div>
+
+    <script src="/js/hockey-rink.js"></script>
+</body>
+</html>
